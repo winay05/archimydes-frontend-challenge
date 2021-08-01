@@ -1,0 +1,21 @@
+.action-table {
+  background-color: var(--background-action);
+}
+
+th,
+td {
+  padding: 1.5rem !important;
+}
+th {
+  text-transform: uppercase;
+}
+td#action {
+  transition: 0.1s all;
+}
+td#action:hover {
+  transform: scale(1.3);
+}
+
+/* tr:hover {
+  cursor: pointer;
+} */

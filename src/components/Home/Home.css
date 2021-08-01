@@ -1,0 +1,16 @@
+.main-container {
+  width: 70%;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    width: 95%;
+  }
+}
+#top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
