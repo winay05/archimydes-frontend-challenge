@@ -37,12 +37,17 @@ export default class Home extends Component {
   deleteUser = (idx) => {
     this.setState({
       users: this.state.users.filter((el) => el.id !== idx),
+      selectedUser: null,
     });
   };
   selectUser = (idx) => {
-    this.setState({
-      selectedUser: this.state.users.find((el) => el.id === idx),
-    });
+    console.log(idx);
+    this.setState(
+      {
+        selectedUser: { ...this.state.users.find((el) => el.id === idx) },
+      },
+      () => console.log(this.state)
+    );
   };
   render() {
     return (
@@ -55,6 +60,9 @@ export default class Home extends Component {
 
           <Row className="action-table">
             <TableView
+              selectedUser={this.state.selectedUser}
+              selectUser={this.selectUser}
+              updateUser={this.updateUser}
               columns={Object.keys(data[0]).slice(1)}
               data={this.state.users}
               handleDelete={this.deleteUser}

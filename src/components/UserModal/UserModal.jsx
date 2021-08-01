@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form, Modal, Row } from "react-bootstrap";
 
 import "./UserModal.css";
 
 export default function UserModal(props) {
-  const [show, setShow] = useState(false);
-  const [form, setForm] = useState({});
+  console.log("inside modal-> props", props);
+  const [show, setShow] = useState(props.show);
+  const [form, setForm] = useState(
+    props.selectedUser ? props.selectedUser : {}
+  );
 
   const { handleCreate } = props;
 
@@ -35,11 +38,25 @@ export default function UserModal(props) {
     }
     handleClose();
     setForm({});
-    handleCreate(user);
+    if (props.edit) {
+      props.handleEdit(user);
+    } else {
+      handleCreate(user);
+    }
   };
+
+  useEffect(() => {
+    setShow(props.selectedUser ? true : false);
+    setForm(props.selectedUser ? props.selectedUser : {});
+  }, [props]);
   return (
     <>
-      <div className="btn btn-primary" onClick={handleShow} role="button">
+      <div
+        style={props.edit ? { display: "none" } : {}}
+        className="btn btn-primary"
+        onClick={handleShow}
+        role="button"
+      >
         <span>
           <strong>+</strong>{" "}
         </span>
