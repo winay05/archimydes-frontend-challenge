@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, Form, Modal, Row } from "react-bootstrap";
 
 import "./UserModal.css";
 
 export default function UserModal(props) {
-  const { handleCreate } = props;
   const [show, setShow] = useState(false);
   const [form, setForm] = useState({});
+
+  const { handleCreate } = props;
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -41,11 +43,13 @@ export default function UserModal(props) {
         <span>
           <strong>+</strong>{" "}
         </span>
-        Create User
+        {props.edit ? "Update User" : "Create User"}
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Create User</Modal.Title>
+          <Modal.Title>
+            {props.edit ? "Update User" : "Create User"}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -89,7 +93,7 @@ export default function UserModal(props) {
             </Row>
             <Row style={{ margin: 0 }}>
               <Button variant="primary" onClick={handleSubmit}>
-                Create User
+                {props.edit ? "Update User" : "Create User"}
               </Button>
             </Row>
           </Form>
