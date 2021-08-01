@@ -1,0 +1,8 @@
+.modal-button-primary,
+.modal-button-primary:hover {
+  background-color: darkcyan !important;
+  color: white !important;
+}
+.modal-button-secondary:hover {
+  background-color: lightgrey;
+}

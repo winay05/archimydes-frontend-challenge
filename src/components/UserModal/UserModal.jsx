@@ -4,7 +4,6 @@ import { Button, Form, Modal, Row } from "react-bootstrap";
 import "./UserModal.css";
 
 export default function UserModal(props) {
-  console.log("inside modal-> props", props);
   const [show, setShow] = useState(props.show);
   const [form, setForm] = useState(
     props.selectedUser ? props.selectedUser : {}
@@ -53,7 +52,7 @@ export default function UserModal(props) {
     <>
       <div
         style={props.edit ? { display: "none" } : {}}
-        className="btn btn-primary"
+        className="btn modal-button-primary"
         onClick={handleShow}
         role="button"
       >
@@ -104,12 +103,20 @@ export default function UserModal(props) {
               </Form.Select>
             </Form.Group>
             <Row style={{ margin: 0 }}>
-              <Button variant="light" onClick={handleClose}>
+              <Button
+                className="modal-button-secondary"
+                variant="light"
+                onClick={handleClose}
+              >
                 Cancel
               </Button>
             </Row>
             <Row style={{ margin: 0 }}>
-              <Button variant="primary" onClick={handleSubmit}>
+              <Button
+                variant="light"
+                className="modal-button-primary"
+                onClick={handleSubmit}
+              >
                 {props.edit ? "Update User" : "Create User"}
               </Button>
             </Row>

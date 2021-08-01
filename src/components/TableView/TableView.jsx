@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { Table } from "react-bootstrap";
 import "./TableView.css";
@@ -13,10 +13,6 @@ const TableView = (props) => {
     props.selectUser(idx);
   };
 
-  // useEffect(()=>{
-
-  // })
-  console.log("props:", props);
   return (
     <>
       <UserModal

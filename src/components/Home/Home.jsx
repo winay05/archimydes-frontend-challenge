@@ -41,13 +41,9 @@ export default class Home extends Component {
     });
   };
   selectUser = (idx) => {
-    console.log(idx);
-    this.setState(
-      {
-        selectedUser: { ...this.state.users.find((el) => el.id === idx) },
-      },
-      () => console.log(this.state)
-    );
+    this.setState({
+      selectedUser: { ...this.state.users.find((el) => el.id === idx) },
+    });
   };
   render() {
     return (
