@@ -6,3 +6,7 @@
 .modal-button-secondary:hover {
   background-color: lightgrey;
 }
+
+div.modal.fade {
+  background-color: lightgrey;
+}

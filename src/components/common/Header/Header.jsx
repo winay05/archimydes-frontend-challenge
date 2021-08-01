@@ -6,7 +6,9 @@ const Header = (props) => {
   return (
     <Navbar className="header-container">
       <Container>
-        <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          {props.title || "Archimydes Challenge"}
+        </Navbar.Brand>
       </Container>
     </Navbar>
   );

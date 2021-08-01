@@ -27,15 +27,15 @@ const TableView = (props) => {
         <Table responsive>
           <thead>
             <tr>
-              {columns.map((field) => (
-                <th>{field}</th>
+              {columns.map((field, key) => (
+                <th key={key}>{field}</th>
               ))}
               <th>ACTIONS</th>
             </tr>
           </thead>
           <tbody>
-            {data?.map((user) => (
-              <tr>
+            {data?.map((user, key) => (
+              <tr key={key}>
                 <td
                   className="name"
                   role="button"

@@ -13,5 +13,5 @@ td#action {
   transition: 0.1s all;
 }
 td#action:hover {
-  transform: scale(1.3);
+  transform: scale(1.2);
 }

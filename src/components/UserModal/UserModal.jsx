@@ -59,7 +59,7 @@ export default function UserModal(props) {
         <span>
           <strong>+</strong>{" "}
         </span>
-        {props.edit ? "Update User" : "Create User"}
+        Create User
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -69,7 +69,7 @@ export default function UserModal(props) {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Group className="mb-3" controlId="Name">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 required
@@ -80,7 +80,7 @@ export default function UserModal(props) {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="Email">
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 required
@@ -91,7 +91,7 @@ export default function UserModal(props) {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicSelect">
+            <Form.Group className="mb-3" controlId="Select">
               <Form.Label>Role</Form.Label>
               <Form.Select
                 value={form.role}
